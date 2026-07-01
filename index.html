@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Blind Timer Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <section id="home-screen" class="screen">
+            <h1 class="game-title">Blind Timer</h1>
+            
+            <div class="stats-container">
+                <p id="home-record">Record: Livello 0</p>
+                <p id="home-last-score" class="hidden">Ultima Partita: Livello 0</p>
+            </div>
+
+            <div class="instructions">
+                <p>Ferma il timer al momento giusto. Attento: dopo 2 secondi il display scompare. Conta a mente!</p>
+            </div>
+
+            <button id="start-btn" class="btn btn-primary">START</button>
+        </section>
+
+        <section id="game-screen" class="screen hidden">
+            <div class="level-badge">
+                <span id="game-level">LIV. 1</span>
+            </div>
+
+            <div class="target-box">
+                <h2>TARGET</h2>
+                <div id="target-value">0.00s</div>
+            </div>
+
+            <div class="timer-box">
+                <h2>TIME</h2>
+                <div id="timer-display">0.00</div>
+            </div>
+
+            <button id="action-btn" class="btn btn-action">AVVIA</button>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <h2 id="result-title">Esito</h2>
+            
+            <div class="result-details">
+                <p id="result-message"></p>
+                <p id="result-stats"></p>
+            </div>
+
+            <button id="next-btn" class="btn btn-primary">PROSSIMO LIVELLO</button>
+            <button id="home-btn" class="btn btn-secondary">TORNA ALLA HOME</button>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

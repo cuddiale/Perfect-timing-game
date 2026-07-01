@@ -4,7 +4,13 @@ Un mini-gioco web "mobile-first" basato sul tempismo, sul ritmo e sul proprio or
 
 ## 🚀 Live Demo
 
-[Gioca ora su GitHub Pages](https://<il-tuo-username>.github.io/<nome-della-repository>/) _(Sostituisci questo link una volta attivato GitHub Pages)_
+[Gioca ora su GitHub Pages]
+
+
+----- INSERIRE LINK REPO -------
+
+
+
 
 ## 🎮 Come si gioca
 
@@ -20,7 +26,3 @@ Un mini-gioco web "mobile-first" basato sul tempismo, sul ritmo e sul proprio or
 - **CSS3** (Design responsive Mobile-First e animazioni)
 - **JavaScript (Vanilla)** (Logica di gioco, gestione dei livelli e del timer)
 - **Web Storage API (LocalStorage)** (Per il salvataggio del record personale senza backend)
-
-## 👤 Autore
-
-- **Il tuo Nome / GitHub** - [@il-tuo-username](https://github.com/il-tuo-username)
