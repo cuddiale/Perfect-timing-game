@@ -1,0 +1,206 @@
+/* Reset e Variabili Globali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Rimuove il flash blu al touch su mobile */
+}
+
+:root {
+    --bg-color: #121214;
+    --card-bg: #1a1a1e;
+    --primary-color: #4f46e5; /* Viola tech */
+    --action-color: #06b6d4;  /* Cyan per il tasto di gioco */
+    --success-color: #10b981; /* Verde successo */
+    --danger-color: #ef4444;  /* Rosso sconfitta */
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container principale Mobile-First */
+.game-container {
+    width: 100%;
+    max-width: 420px; /* Dimensione tipica di uno schermo smartphone */
+    height: 100vh;
+    max-height: 850px;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 450px) {
+    .game-container {
+        border-radius: 24px;
+        height: 85vh;
+    }
+}
+
+/* Gestione Schermate */
+.screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Schermata Home */
+.game-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--action-color), var(--primary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 2rem;
+}
+
+.stats-container {
+    margin: 2rem 0;
+}
+
+.stats-container p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+#home-record { color: var(--action-color); }
+#home-last-score { color: var(--text-muted); }
+
+.instructions {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 1.2rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Schermata Gameplay */
+.level-badge {
+    background-color: rgba(79, 70, 229, 0.2);
+    color: var(--primary-color);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.target-box h2, .timer-box h2 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+#target-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--action-color);
+}
+
+#timer-display {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: monospace;
+    transition: color 0.2s;
+}
+
+.timer-blind {
+    color: var(--text-muted) !important;
+    letter-spacing: 4px;
+}
+
+/* Schermata Risultati */
+#result-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 2rem;
+}
+
+.success-text { color: var(--success-color); }
+.danger-text { color: var(--danger-color); }
+
+.result-details {
+    background-color: rgba(255, 255, 255, 0.02);
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+#result-message {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+#result-stats {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Pulsanti */
+.btn {
+    width: 100%;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s;
+    user-select: none;
+    margin-bottom: 0.5rem;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-action {
+    background-color: var(--action-color);
+    color: #000;
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
